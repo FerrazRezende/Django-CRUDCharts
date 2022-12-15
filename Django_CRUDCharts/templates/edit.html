@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/header.html' %}
+
+<h1 class="create-title">Edit</h1>
+
+<form class="row g-3" id="form" method="POST">
+    {% csrf_token %}
+    <div class="col-md-4 name">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" name="name" value="{{ user.name }}">
+    </div>
+    <div class="email">
+      <label class="form-label">E-mail</label>
+      <input type="text" class="form-control" name="email" value="{{ user.email }}">
+      <div class="gender">
+        <select class="form-select" aria-label="Insert gender" name="gender">
+          <option selected>{{ user.gender }}</option>
+          <option value="Man">Man</option>
+          <option value="Woman">Womam</option>
+        </select>
+        <div class="dateclass">
+          <label>Date:</label>
+          {{ form.date }}
+        </div>
+      </div>
+      <input type="submit" class="btn btn-success submit" value="Save">
+    </div>
+
+</form>
+
+{% endblock %}

@@ -44,6 +44,31 @@ section {
     margin-top: 40px;
 }
 
+.dateclass input{
+    border: hidden 1px;
+}
+
+
+.name input {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 300px;
+    height: 80%;
+}
+
+.gender {
+    margin-top: 5%;
+}
+
+.gender select {
+    border: hidden 1px;
+    border-radius: 10px;
+}
+
+.submit {
+    margin-top: 5%;
+}
+
 #form {
     border: solid 3px;
     border-radius: 15px;
@@ -67,24 +92,4 @@ section {
     display: flex;
     flex-direction: column;
     margin-bottom: 5%;
-}
-
-.name input {
-    margin-left: 10%;
-    margin-right: 10%;
-    width: 300px;
-    height: 80%;
-}
-
-.gender {
-    margin-top: 5%;
-}
-
-.gender select {
-    border: hidden 1px;
-    border-radius: 10px;
-}
-
-.submit {
-    margin-top: 5%;
 }

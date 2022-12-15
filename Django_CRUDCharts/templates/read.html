@@ -5,24 +5,23 @@
 {% include 'partials/header.html' %}
 
 <div class="container-xxl">
-    <table class="table">
+    <table class="table" id="read">
         <thead>
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">E-mail</th>
-                <th scope="col">Actions</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Date</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td>{{ user }}</td>
-                <td></td>
-                <td><button class="btn btn-outline-primary">Read</button>
-                    <button class="btn btn-outline-dark">Edit</button>
-                    <button class="btn btn-outline-danger">Delete</button>
-                </td>
+                <th scope="row">{{ read.id }}</th>
+                <td>{{ read.name }}</td>
+                <td>{{ read.email }}</td>
+                <td>{{ read.gender }}</td>
+                <td>{{ read.date }}</td>
             </tr>
         </tbody>
     </table>

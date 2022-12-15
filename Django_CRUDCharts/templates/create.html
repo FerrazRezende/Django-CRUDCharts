@@ -4,6 +4,8 @@
 
 {% include 'partials/header.html' %}
 
+<h1 class="create-title">Create</h1>
+
 <form class="row g-3" id="form" action="{% url 'create' %}" method="POST">
     {% csrf_token %}
     <div class="col-md-4 name">
@@ -16,8 +18,11 @@
       <label class="form-label">E-mail</label>
       <input type="text" class="form-control" name="email" placeholder="email@email.com">
       <div class="gender">
-        <label>Gender</label>
-          {{ form.gender }}
+        <select class="form-select" aria-label="Insert gender" name="gender">
+          <option selected>Select gender</option>
+          <option value="Man">Man</option>
+          <option value="Woman">Womam</option>
+        </select>
       </div>
       <input type="submit" class="btn btn-success submit" value="Submit">
     </div>
