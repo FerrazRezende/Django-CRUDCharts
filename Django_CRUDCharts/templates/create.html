@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'partials/header.html' %}
+
+<form class="row g-3" id="form" action="{% url 'create' %}" method="POST">
+    {% csrf_token %}
+    <div class="col-md-4 name">
+      <label class="form-label">First name</label>
+      <input type="text" class="form-control" name="name-1" placeholder="Firs Name">
+      <label class="form-label">Last name</label>
+      <input type="text" class="form-control" placeholder="Last Name" name="name-2">
+    </div>
+    <div class="email">
+      <label class="form-label">E-mail</label>
+      <input type="text" class="form-control" name="email" placeholder="email@email.com">
+      <div class="gender">
+        <label>Gender</label>
+          {{ form.gender }}
+      </div>
+      <input type="submit" class="btn btn-success submit" value="Submit">
+    </div>
+
+</form>
+
+{% endblock %}
