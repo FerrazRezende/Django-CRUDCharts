@@ -1,11 +1,19 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import get_object_or_404
+from django.contrib import messages
 from .forms import PersonForm
 from .models import Person
 
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
+
+def view(request):
+    
+    data = {}
+    data['create'] = Person.objects.all()
+
+    return render(request, 'view.html', data)
 
 def create(request):
 
@@ -19,16 +27,11 @@ def create(request):
         gender = request.POST['gender']
     
         person = Person.objects.create(name=name_1 + ' ' + name_2, email=email, gender=gender)
+        messages.success(request, 'User created successfully')
         person.save()
+        return redirect('view')
 
     return render(request, 'create.html', context)
-
-def view(request):
-    
-    data = {}
-    data['create'] = Person.objects.all()
-
-    return render(request, 'view.html', data)
 
 def read(request, pk):
 
@@ -40,10 +43,10 @@ def read(request, pk):
 
 def delete(request, pk):
     db = Person.objects.get(pk=pk)
-
     db.delete()
+    messages.info(request, 'User deleted sucessfully!')
 
-    return render(request, 'view.html')
+    return redirect('view')
 
 def edit(request, pk):
 
@@ -57,6 +60,7 @@ def edit(request, pk):
         gender = request.POST['gender']
 
         new_user = Person.objects.filter(pk=pk).update(name=name, email=email, gender=gender)
-        return redirect('index')
+        messages.success(request, 'User edited sucessfully!')
+        return redirect('view')
 
     return render(request, 'edit.html', data)

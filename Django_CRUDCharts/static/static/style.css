@@ -93,3 +93,9 @@ section {
     flex-direction: column;
     margin-bottom: 5%;
 }
+
+#showSucces {
+    border-left-color:#2ecc71;
+    color:#2ecc71
+    }
+    

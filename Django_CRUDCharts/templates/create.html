@@ -5,7 +5,7 @@
 {% include 'partials/header.html' %}
 
 <h1 class="create-title">Create</h1>
-
+{% include 'partials/alerts.html' %}
 <form class="row g-3" id="form" action="{% url 'create' %}" method="POST">
     {% csrf_token %}
     <div class="col-md-4 name">
