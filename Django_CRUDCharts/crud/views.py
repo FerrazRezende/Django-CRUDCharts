@@ -58,9 +58,24 @@ def edit(request, pk):
         name = request.POST['name']
         email = request.POST['email']
         gender = request.POST['gender']
+        date = request.POST['date']
 
-        new_user = Person.objects.filter(pk=pk).update(name=name, email=email, gender=gender)
+        new_user = Person.objects.filter(pk=pk).update(name=name, email=email, gender=gender, date=date)
         messages.success(request, 'User edited sucessfully!')
         return redirect('view')
 
     return render(request, 'edit.html', data)
+
+
+def charts(request):
+
+    data = {}
+
+    data['man'] = len(Person.objects.filter(gender='Man'))
+    data['woman'] = len(Person.objects.filter(gender='Woman'))
+
+    data['october'] = len(Person.objects.filter(date__month='10'))
+    data['november'] = len(Person.objects.filter(date__month='11'))
+    data['december'] = len(Person.objects.filter(date__month='12'))
+
+    return render(request, 'charts.html', data)

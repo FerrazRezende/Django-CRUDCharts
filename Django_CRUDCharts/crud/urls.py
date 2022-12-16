@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('create', views.create, name='create'),
     path('view', views.view, name='view'),
+    path('charts', views.charts, name='charts'),
 
     #actions
     path('delete/<int:pk>', views.delete, name='delete'),

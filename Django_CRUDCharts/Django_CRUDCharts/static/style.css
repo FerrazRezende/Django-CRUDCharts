@@ -51,6 +51,15 @@ section {
     margin-bottom: -5%;
 }
 
+.column-charts {
+    margin-left: 45%;
+    margin-top: -22%;
+}
+
+.pie-charts{
+    margin-left: 10%;
+}
+
 #form {
     border: solid 3px;
     border-radius: 15px;
