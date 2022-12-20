@@ -79,3 +79,4 @@ def charts(request):
     data['december'] = len(Person.objects.filter(date__month='12'))
 
     return render(request, 'charts.html', data)
+
