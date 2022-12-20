@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ```
 
 ### Database
-The project runs a PostgreSQL database, so you will need PostgreSQL on your computer. 
+The project runs a PostgreSQL database, so you will need PostgreSQL on your computer. Or you can use the standard database SQLite, to do this skip the postgres configuration step.
 
 [How to install PostgreSQL](https://www.youtube.com/watch?v=0n41UTkOBb0)
 
@@ -47,7 +47,7 @@ After, enter your Postgres information in the project settings:
 
 > Default port is 5432
 
-To switch to the default Django database (SQLite): 
+## To switch to the default Django database (SQLite): 
 ``` python
 DATABASES = {
     'default': {
